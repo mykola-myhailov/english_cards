@@ -1,17 +1,12 @@
-import 'dart:io';
-
 import '../sources/firebase_storage.dart';
 
 class ImageRepository {
-  final FirebaseStorageSource _firebaseStorageSource;
+  final FirebaseStorageSource _storageSource;
+  const
 
-  ImageRepository(this._firebaseStorageSource);
+  ImageRepository(this._storageSource);
 
-  Future<String> uploadImage(File imageFile, String imagePath) async {
-    try {
-      return await _firebaseStorageSource.uploadImage(imageFile, imagePath);
-    } catch (e) {
-      throw Exception('Error uploading image: $e');
-    }
+  Future<String> fetchImageURL(String imageId) {
+    return _storageSource.getImageURL(imageId);
   }
 }

@@ -1,5 +1,6 @@
-import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'dart:convert';
+
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:logger/logger.dart';
 
 class RemoteConfigService {

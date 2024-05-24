@@ -1,0 +1,11 @@
+class WordCardState {
+  final WordCard? wordCard;
+  final String? imageUrl;
+  final int currentIndex;
+
+  WordCardState({
+    required this.wordCard,
+    required this.imageUrl,
+    required this.currentIndex,
+  });
+}

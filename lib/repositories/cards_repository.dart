@@ -1,6 +1,5 @@
 import '../models/word_card.dart';
 import '../sources/google_sheets.dart';
-
 import '../sources/remote_configs_service.dart';
 
 class CardsRepository {
