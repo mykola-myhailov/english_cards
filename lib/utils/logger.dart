@@ -1,18 +1,17 @@
-
 import 'package:logger/logger.dart';
 
-class Logger {
+class AppLogger {
   static final _logger = Logger(
-     printer: PrettyPrinter(
-        methodCount: 2,
-        errorMethodCount: 8,
-        lineLength: 120,
-        colors: true,
-        printEmojis: true,
-        printTime: true,
-      ),
-      filter: DevelopmentFilter(),
-      output: ConsoleOutput(),
+    printer: PrettyPrinter(
+      methodCount: 2,
+      errorMethodCount: 8,
+      lineLength: 120,
+      colors: true,
+      printEmojis: true,
+      printTime: true,
+    ),
+    filter: DevelopmentFilter(),
+    output: ConsoleOutput(),
   );
 
   static void d(String message) {

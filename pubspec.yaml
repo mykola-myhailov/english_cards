@@ -37,6 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_bloc: ^8.1.5
   logger: ^2.3.0
+  gsheets: ^0.5.0
+  firebase_core: ^2.31.1
+  firebase_storage: ^11.7.6
+  firebase_remote_config: ^4.4.6
+
 
 dev_dependencies:
   flutter_test:

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "856795945364",
+    "project_id": "englishcards-12845",
+    "storage_bucket": "englishcards-12845.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856795945364:android:ebc455d17e87cb297f1781",
+        "android_client_info": {
+          "package_name": "com.example.english_cards"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs7GaFt3sv50LrJUmK7iuX_nrISRlFLzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
