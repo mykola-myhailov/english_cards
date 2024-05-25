@@ -8,12 +8,8 @@ class AppStyles {
   static const double spacingHeight22 = 22.0;
   static const double spacingHeight40 = 40.0;
   static const double spacingHeight8 = 8.0;
-
-  static double pagePadding = 16.0;
-
-  static var marginTop = 40.0;
-
-
+  static const double pagePadding = 16.0;
+  static const double marginTop = 40.0;
 
   static double get cardMarginTop => 0.05;
   static double get cardMarginBottom => 0.05;

@@ -19,7 +19,7 @@ class NavigationButtons extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.only(
-        bottom: screenHeight * AppStyles.cardMarginBottom, // Отступ снизу
+        bottom: screenHeight * AppStyles.cardMarginBottom,
         left: screenWidth * AppStyles.cardMarginHorizontal,
         right: screenWidth * AppStyles.cardMarginHorizontal,
       ),
