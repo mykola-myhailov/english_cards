@@ -37,4 +37,8 @@ class WordCardViewModel {
       _currentIndex--;
     }
   }
+
+  void setIndex(int index) {
+    _currentIndex = index;
+  }
 }

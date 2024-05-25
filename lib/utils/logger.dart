@@ -13,20 +13,20 @@ class AppLogger {
     filter: DevelopmentFilter(),
     output: ConsoleOutput(),
   );
-
+  static const String LOGGER_TAG = 'LOGGER: ';
   static void d(String message) {
-    _logger.d(message);
+    _logger.d(LOGGER_TAG + message);
   }
 
   static void e(String message) {
-    _logger.e(message);
+    _logger.e(LOGGER_TAG + message);
   }
 
   static void w(String message) {
-    _logger.w(message);
+    _logger.w(LOGGER_TAG + message);
   }
 
   static void i(String message) {
-    _logger.i(message);
+    _logger.i(LOGGER_TAG + message);
   }
 }

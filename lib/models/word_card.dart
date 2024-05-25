@@ -11,4 +11,13 @@ class WordCard {
     required this.translation,
     required this.imageId,
   });
+
+  static fromJson(json) {
+    return WordCard(
+      cardId: json[0],
+      word: json[1],
+      translation: json[2],
+      imageId: json[3],
+    );
+  }
 }

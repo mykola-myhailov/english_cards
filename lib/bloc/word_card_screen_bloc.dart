@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:logger/logger.dart';
@@ -15,14 +14,19 @@ class WordCardBloc {
   final Logger _logger = Logger();
   final StreamController<WordCardViewModel> _stateController = StreamController<WordCardViewModel>.broadcast();
 
-  WordCardBloc(this._cardsRepository, this._imageRepository);
+  WordCardBloc(this._cardsRepository, this._imageRepository){
+    _logger.d('WordCardBloc()');
+  }
 
   Stream<WordCardViewModel> get state => _stateController.stream;
 
   Future<void> fetchData() async {
+    _logger.d('fetchData()');
     try {
       final wordCards = await _cardsRepository.fetchCardList();
+      _logger.d('Fetched ${wordCards.length} word cards');
       final cardsOrder = await _cardsRepository.getCardsOrder();
+      _logger.d('Fetched ${cardsOrder.length} cards order');
 
       _sortWordCards(wordCards, cardsOrder);
       _viewModel.setWordCards(wordCards);
@@ -44,10 +48,14 @@ class WordCardBloc {
   }
 
   Future<void> _loadCurrentImage() async {
+    _logger.d('_loadCurrentImage()');
     try {
       if (_viewModel.currentWordCard != null) {
-        final imageUrl = await _imageRepository.fetchImageURL(_viewModel.currentWordCard!.imageId);
+        _logger.d('Current cardId: ${_viewModel.currentWordCard!.cardId}');
+        final imageUrl = await _imageRepository.getImageUrl(_viewModel.currentWordCard!.imageId);
         _viewModel.setImageUrl(imageUrl);
+      } else {
+        _logger.d('Current card is null');
       }
     } catch (e) {
       _logger.e('Error loading image: $e');
@@ -57,13 +65,21 @@ class WordCardBloc {
   }
 
   void nextCard() async {
-    _viewModel.nextCard();
+    if (_viewModel.currentIndex < _viewModel.wordCards.length - 1) {
+      _viewModel.nextCard();
+    } else {
+      _viewModel.setIndex(0);
+    }
     await _loadCurrentImage();
     _emitState();
   }
 
   void previousCard() async {
-    _viewModel.previousCard();
+    if (_viewModel.currentIndex > 0) {
+      _viewModel.previousCard();
+    } else {
+      _viewModel.setIndex(_viewModel.wordCards.length - 1);
+    }
     await _loadCurrentImage();
     _emitState();
   }

@@ -5,13 +5,12 @@ class FirebaseStorageSource {
   final FirebaseStorage _firebaseStorage = FirebaseStorage.instance;
   final Logger _logger = Logger();
 
-  static const String BASE_PATH = 'gs://englishcards-12845.appspot.com/';
-
   Future<String> getImageURL(String imageId) async {
-    final String imagePath = '$BASE_PATH/$imageId';
+    final String imagePath = '$imageId.png';
+    _logger.d('Retrieving image URL for imagePath: $imagePath');
     try {
       String imageUrl = await _firebaseStorage.ref().child(imagePath).getDownloadURL();
-      _logger.i('Retrieved image URL: $imageUrl');
+      _logger.d('Retrieved image URL: $imageUrl');
       return imageUrl;
     } catch (e) {
       _logger.e('Error retrieving image URL: $e');

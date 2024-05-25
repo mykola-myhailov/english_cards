@@ -1,12 +1,9 @@
 import '../sources/firebase_storage.dart';
 
 class ImageRepository {
-  final FirebaseStorageSource _storageSource;
-  const
+  final FirebaseStorageSource _firebaseStorageSource = FirebaseStorageSource();
 
-  ImageRepository(this._storageSource);
-
-  Future<String> fetchImageURL(String imageId) {
-    return _storageSource.getImageURL(imageId);
+  Future<String> getImageUrl(String imageId) async {
+    return _firebaseStorageSource.getImageURL(imageId);
   }
 }
