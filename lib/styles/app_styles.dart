@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 
 class AppStyles {
-  static const double cardPadding = 16.0;
+  static const double cardPadding = 8.0;
   static const double spacingHeight32 = 32.0;
   static const double spacingHeight16 = 16.0;
+  static const double spacingHeight20 = 20.0;
+  static const double spacingHeight22 = 22.0;
+  static const double spacingHeight40 = 40.0;
   static const double spacingHeight8 = 8.0;
 
-  static double get cardMarginTop => 0.01;
+  static double pagePadding = 16.0;
+
+  static var marginTop = 40.0;
+
+
+
+  static double get cardMarginTop => 0.05;
   static double get cardMarginBottom => 0.05;
   static double get cardMarginHorizontal => 0.05;
 
